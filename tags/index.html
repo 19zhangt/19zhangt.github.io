@@ -11,7 +11,7 @@
 
     <title>
         
-        Galaxy rookie - AirCloud的博客 | AirCloud&#39;s Blog
+        Tags - AirCloud的博客 | AirCloud&#39;s Blog
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -88,10 +88,6 @@
         </ul>
     </div>
     
-        <div id="toc" class="toc-article">
-    
-</div>
-    
 </div>
 
 
@@ -114,40 +110,13 @@
     
     <div class="index-middle">
         <!-- Main Content -->
-        
-
-
-<div class="post-container">
-    <div class="post-title">
-        Galaxy rookie
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2018-09-15 17:51:17</span></span>
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <p>关于Galaxy在服务器上的搭建和使用</p>
-
-        
-            <div class="donate-container">
-    <div class="donate-button">
-        <button id="donate-button">赞赏</button>
-    </div>
-    <div class="donate-img-container hide" id="donate-img-container">
-        <img id="donate-img" src="" data-src="/img/donate.jpg">
-        <p> 感谢鼓励 </p>
-    </div>
+        <div id='tag_cloud' class="tags">
+    
 </div>
-        
-        <div id="comment-container">
-        </div>
-    </div>
-</div>
+
+<!-- 标签列表 -->
+
+
     </div>
 </div>
 
@@ -248,24 +217,10 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<script src="/js/gitment.js"></script>
-<script>
-    var gitment = new Gitment({
-        id: 'Galaxy rookie',
-        owner: '19zhangt',
-        repo: 'https://github.com/19zhangt/19zhangt.github.io',
-        oauth: {
-            client_id: 'd7e0ff35f766f4c6fb78',
-            client_secret: '9a7ef03e5aaa84d0ae30dc2fa30fec9de361c404',
-        },
-    })
-    gitment.render('comment-container')
-</script>
 
 </html>
