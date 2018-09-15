@@ -20,7 +20,7 @@
 <meta name="verify" content=all />
     <!--Title-->
 
-<title>Archives | Hexo</title>
+<title>Galaxy rookie | Hexo</title>
 
 <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 
@@ -29,9 +29,10 @@
 
     
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/archive.css">
+<link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
 
     <!--script-->
 
@@ -41,6 +42,23 @@
 
 <!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
 
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
+<script>
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "GeekaholicLin",
+    repo: "geekaholiclin.github.io",
+    oauth: {
+      client_id: "aa2215dfc8ee944d1205",
+      client_secret: "77cd2afa5d161bc0ab04639ed81300d808c6e22b"
+    },
+    perPage: "20",
+    labels: labels
+  });
+</script>
 
     
     
@@ -132,15 +150,16 @@ title="fork me" target="_blank">Geekaholic</a></p>
 </ul>
 
 
-        
-<div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-        
-      <li class="post-items" _href="/2018/09/15/Galaxy-rookie/">
-        <p class="info">2018</p>
-        <h2 class="post-item-title">Galaxy rookie</h2>
-          <div class="article-meta">
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="Galaxy rookie">
+                
+                Galaxy rookie
+                
+            </h1>
+            <div class="article-meta">
     
     
     <span class="categories-meta fa-wrap">
@@ -161,7 +180,7 @@ title="fork me" target="_blank">Geekaholic</a></p>
     
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">09/15</span>
+        <span class="date-meta ">2018/09/15</span>
     </span>
     
     
@@ -174,12 +193,80 @@ title="fork me" target="_blank">Geekaholic</a></p>
     
 </div>
 
-      </li>
+            
+            
+        </div>
         
-    </ul>
-  </div>
-</div>
+        <div id="post-body">
+            <p>关于Galaxy在服务器上的搭建和使用</p>
 
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="http://example.com/author.jpg" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  Author:
+                  
+                    
+                    <a href="/about.html">John Doe</a>
+                </li>
+                
+                <li>Published Date: <span>2018-09-15  17:51:17</span></li>
+                
+                <li>Updated Date: <span>2018-09-15  18:30:30</span></li>
+                
+                <li class="post-category">
+                    Categories:
+                    
+                </li>
+                <li class="post-tags">
+                    Tags:
+                    
+                </li>
+                
+                <li> License: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="http://example.com/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                <img src="http://example.com/wechat.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitment.render(document.getElementById("comments"));
+</script>
+
+
+
+    </div>
+    
+</div>
 
 
     </div>
@@ -216,8 +303,14 @@ title="fork me" target="_blank">Geekaholic</a></p>
     <li class="totop-btn fa fa-angle-up"></li>
     <li class="exchange-btn fa fa-exchange"></li>
   
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
     
 </ul>
 <p id="process"></p>
@@ -235,6 +328,8 @@ title="fork me" target="_blank">Geekaholic</a></p>
         </div>
     </div>
 </div>
+
+    
 
 
     <script src="/js/highsong.js"></script>
