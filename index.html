@@ -1,237 +1,287 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  hexo-theme-nayo </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
     
-    <title>conci</title>
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+      <header class="header">
+	
+  <nav class="header-nav">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+
+                <span class="header-menu-title">首頁</span>
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+
+                <span class="header-menu-title">歸檔</span>
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+
+                <span class="header-menu-title">標籤</span>
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+
+                <span class="header-menu-title">關於</span>
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
+    </div>  
     
-    
-        <link rel="icon" href="./favicon.ico">
-    
-    <link rel="stylesheet" href="/css/concise.css">
-    <script src="/js/concise.js"></script>
-    <script>
-        (function(){
-            var useragent=navigator.userAgent;
-            console.log(navigator,useragent);
-            var isM;
-            if(useragent.indexOf('iPhone')!=-1){
-                isM=true;
-            }else if(useragent.indexOf('Android ')!=-1){
-                isM=true;
-            }else if(useragent.indexOf('iPad')!=-1){
-                isM=true;
-            }else{
-                isM=false;
-            }
-            if(isM){
-                document.documentElement.style.fontSize=document.documentElement.clientWidth/375*100+'px';
-                window.onresize=function(){
-                    document.documentElement.style.fontSize=document.documentElement.clientWidth/375*100+'px';
-                };
-            }
-        })();
-    </script>
-    
-    <script src="http://opu30aljn.bkt.clouddn.com/jquery.js"></script>
-    
-    <script src="/js/script.js"></script>
-</head>
-<body>
-<input type="checkbox" id="left-information">
-<div id="wrapper">
-    <div id="bgg"></div>
-    <header id="header">
-    <nav id="nav" class="clearfix">
-        <label for="left-information"></label>
-        <ul class='nav-left'>
-            <li><a href="/">conci</a></li>
-        </ul>
-        <input type="checkbox" id="header-right-nav">
-        <ul class="clearfix nav-right">
-            
-            <li><a href="/">Home</a></li>
-            
-            <li><a href="/archives">Archives</a></li>
-            
-            <li><a href="/tags">tags</a></li>
-            
-        </ul>
-        <label for="header-right-nav"><i></i></label>
-    </nav>
+  </nav>
 </header>
-    <article id="logo">
-    <div id="logo-content">
-        <header>
-            <a href="">conci.theme<b>hexo</b></a>
-        </header>
-        <p>
-            conci version 1.0.0<br>
-            Simple and practical hexo personal blog theme.<br>
-            The freedom to choose
-        </p>
-    </div>
-</article>
-    <div id="main" class="clearfix">
-        <section id="main-left" class="left">
-            
-    
-        
-            <article class="post">
-    <h3><a href="/2018/09/15/test-my-site/">test_my_site</a></h3>
-    <p>
-        
-        <span class="tag">
-                    
-                </span>&nbsp;&nbsp;•&nbsp;&nbsp;
-        <span class="date">2018,09,15</span>
-    </p>
-    <div class="post-image">
-        <a href="/2018/09/15/test-my-site/"><img src="defimg.png"></a>
-    </div>
-    
-        
-        <div class="page-content">...</div>
-    
-    <div class="post-readmore">
-        <a href="/2018/09/15/test-my-site/">Read More</a>
-    </div>
-</article>
-        
-            <article class="post">
-    <h3><a href="/2018/09/15/hello-world/">Hello World</a></h3>
-    <p>
-        
-        <span class="tag">
-                    
-                </span>&nbsp;&nbsp;•&nbsp;&nbsp;
-        <span class="date">2018,09,15</span>
-    </p>
-    <div class="post-image">
-        <a href="/2018/09/15/hello-world/"><img src="defimg.png"></a>
-    </div>
-    
-        
-        <div class="page-content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.Quick ...</div>
-    
-    <div class="post-readmore">
-        <a href="/2018/09/15/hello-world/">Read More</a>
-    </div>
-</article>
-        
-    
+
+   
+
+      <div class="container">       
+          
+          
+            <section class="main">  
+          
+
+          
 
 
-        </section>
-        <section id="main-right" class="right">
-            <div class="my">
-    <div class="my-information">
-        <div class="my-img">
-            <img src="http://ooa3lxrpg.bkt.clouddn.com/b.jpg?imageView2/1/w/120/h/120/q/75" rel="图片">
-            <a href="/"></a>
-        </div>
-        <span>cc</span>
-        <p>求知若饥 虚心若愚</p>
-    </div>
-    <p class="my-social">
-        
-            <a href="/" class="my-social-me1">github</a>
-        
-            <a href="/" class="my-social-me2">twitter</a>
-        
-            <a href="/" class="my-social-me1">weibo</a>
-        
-            <a href="/" class="my-social-me2">豆瓣</a>
-        
-            <a href="/" class="my-social-me3">知乎</a>
-        
-    </p>
-    <div class="my-post">
-        <a href="/archives">
-            <strong>2</strong><br>
-            <span>posts</span>
-        </a>
-        <a href="/categories">
-            <strong>0</strong><br>
-            <span>categories</span>
-        </a>
-        <a href="/tags">
-            <strong>0</strong><br>
-            <span>tags</span>
-        </a>
-    </div>
-    <div class="search-rss">
-        <div class="my-search">
-            <a href="javascript:void(0)" id ='my-search-a' class="popup-trigger">search</a>
-        </div>
-        
-    </div>
-    <div class="my-links">
-        <ul class="clearfix">
-            
-            <li>
-                <a href="/">
-                    <img src="http://ooa3lxrpg.bkt.clouddn.com/timg.jpg">
-                    <p>ccblog</p>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/">
-                    <img src="http://ooa3lxrpg.bkt.clouddn.com/timg%20%282%29.jpg">
-                    <p>boc</p>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/">
-                    <img src="http://ooa3lxrpg.bkt.clouddn.com/timg%20%283%29.jpg">
-                    <p>haha</p>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/">
-                    <img src="http://ooa3lxrpg.bkt.clouddn.com/timg%20%283%29.jpg">
-                    <p>pp</p>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/">
-                    <img src="http://ooa3lxrpg.bkt.clouddn.com/timg%20%281%29.jpg">
-                    <p>oop</p>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="hot-page">
-        
-    </div>
+
+
+<div class="profile sildeUpMin">
+	
+		<img class="avatar" src="/images/header.jpg">
+
+		<p class="author">Lemon</p>
+		
+		<div class="social">
+   		      	
+			<a target="_blank" class="social-links" href="https://github.com/Lemonreds/hexo-theme-nayo">		
+				<i class="iconfont icon-Github">
+			</i></a>	
+	          	
+			<a target="_blank" class="social-links" href="">		
+				<i class="iconfont icon-Weibo">
+			</i></a>	
+	          	
+			<a target="_blank" class="social-links" href="">		
+				<i class="iconfont icon-Facebook">
+			</i></a>	
+	          	
+			<a target="_blank" class="social-links" href="">		
+				<i class="iconfont icon-Instagram">
+			</i></a>	
+	          	
+			<a target="_blank" class="social-links" href="">		
+				<i class="iconfont icon-Neteasemusic">
+			</i></a>	
+	    
+    	</div>		
 </div>
-        </section>
+
+
+    	  	
+  		
+    			
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="article-title" href="/2018/09/15/test-my-site/">test_my_site</a>  
+	       
+		 
+
+		<div class="article-meta">
+			<time>Sep 15, 2018</time>
+			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		 
+			
+		  	  
+	</div>
+
+	<div class="article-bottom">
+		<a class="article-readmore" href="/2018/09/15/test-my-site/">閱讀更多</a> 	
+	</div>	
+    
+</article>     
+     	
+    	  	
+  		
+    			
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="article-title" href="/2018/09/15/hello-world/">Hello World</a>  
+	       
+		 
+
+		<div class="article-meta">
+			<time>Sep 15, 2018</time>
+			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		 
+			<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+		  	  
+	</div>
+
+	<div class="article-bottom">
+		<a class="article-readmore" href="/2018/09/15/hello-world/">閱讀更多</a> 	
+	</div>	
+    
+</article>     
+     	
+
+
+
+
+          </section> 
+      </div>            
+    
+    <a id="backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+    <div class="search-container sildeUpMin">
+        <div class="search-header">
+            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
+        </div>
+        <div id="search-result" class="search-result"></div>
     </div>
-    <footer id="footer">
-    <p>© 2017  cc | 
-        </iframe><br/>
-        concise theme, this world is mine.  | cc'blog | Fork me on Github
-        
-    </p>
-</footer>
-</div>
-<label for="left-information"></label>
+ 
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首頁
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">歸檔
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">標籤
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">關於
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            
+         
+      
+</div>        
+    
+
+
+
+     
+    
 
 
 
 
-</body>
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2018		
+	
+		Lemon
+		<br>
+
+		Theme By
+		<a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>	
+		</div>			
+	 
+</footer>   
+
+  
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
 </html>
