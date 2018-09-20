@@ -60,7 +60,7 @@
                 </li>
                 <li>
                     
-    更新 <time datetime="2018-09-16T06:53:15.405Z" itemprop="dateUpdated">2018-09-16</time>
+    更新 <time datetime="2018-09-19T00:45:06.950Z" itemprop="dateUpdated">2018-09-19</time>
 
                 </li>
                 <li id="busuanzi_container_page_pv">
@@ -71,7 +71,12 @@
     <div class="container">
         <div class="article">
             <div class="content">
-                <p>Galaxy搭建在./run.sh后，可能提示没有可用的Address，这时候需要手动修改config文件下的galaxy.yml文件中的http: 将127.0.0.1或0.0.0.0改成<br>真实的IP地址，然后重新运行./run.sh。</p>
+                <ol>
+<li>Galaxy搭建在./run.sh后，可能提示没有可用的Address，这时候需要手动修改config文件下的galaxy.yml文件中的http: 将127.0.0.1或0.0.0.0改成<br>真实的IP地址，然后重新运行./run.sh。</li>
+<li>如果出现locale.Error错误，需要设置 export LC_ALL=C 。可以将它写到~/.bashrc 文件中。</li>
+<li>关于字符超出ASCII码的范围，需要中./lib/galaxy/tools/toolbox/intergrated_panel.py 中开始添加:</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(‘utf<span class="number">-8</span>’)</span><br></pre></td></tr></table></figure>
 
             </div>
             <div class="support-author">
