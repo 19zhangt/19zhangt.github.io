@@ -700,7 +700,7 @@
                         if (this.status >= 200 && this.status < 300) {
                             var n = JSON.parse(this.response);
                             i = n instanceof Array ? n : n.posts, e(i)
-                        } else console.error(this.statusText)
+                        } else { console.error(this.status) }
                     }, n.onerror = function() { console.error(this.statusText) }, n.send()
                 }
             }(function(e) {
