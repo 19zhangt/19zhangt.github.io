@@ -78,7 +78,7 @@
                         function o(o) {
                             var a;
                             if ("object" == typeof t && "object" == typeof t.versions && void 0 !== t.versions.node) try { e("canvas") } catch (e) { throw Error("The optional node-canvas dependency is needed for Trianglify to render using canvas in node.") }
-                            return o || (o = r.createElement("canvas")), o.setAttribute("width", f.width), o.setAttribute("height", f.height), (a = o.getContext("2d")).canvas.width = f.width, a.canvas.height = f.height, n.forEach(function(e) { a.fillStyle = a.strokeStyle = e[0], a.lineWidth = f.stroke_width, a.beginPath(), a.moveTo.apply(a, e[1][0]), a.lineTo.apply(a, e[1][1]), a.lineTo.apply(a, e[1][2]), a.fill(), a.stroke() }), o
+                            return o || (o = r.createElement("canvas")), o.setAttribute("width", f.width), o.setAttribute("height", f.height), (a = o.getContext("2d")).canvas.width = f.width, a.canvas.height = f.height, n.forEach(function(e) { a.fillStyle = a.strokeStyle = e[0], a.lineWidth = f.stroke_width, a.beginurl(), a.moveTo.apply(a, e[1][0]), a.lineTo.apply(a, e[1][1]), a.lineTo.apply(a, e[1][2]), a.fill(), a.stroke() }), o
                         }
                         return {
                             polys: n,
@@ -86,7 +86,7 @@
                             svg: function(e) {
                                 var t = r.createElementNS("http://www.w3.org/2000/svg", "svg");
                                 return t.setAttribute("width", f.width), t.setAttribute("height", f.height), e && e.includeNamespace && t.setAttribute("xmlns", "http://www.w3.org/2000/svg"), n.forEach(function(e) {
-                                    var n = r.createElementNS("http://www.w3.org/2000/svg", "path");
+                                    var n = r.createElementNS("http://www.w3.org/2000/svg", "url");
                                     n.setAttribute("d", "M" + e[1].join("L") + "Z"), n.setAttribute("fill", e[0]), n.setAttribute("stroke", e[0]), n.setAttribute("stroke-width", f.stroke_width), t.appendChild(n)
                                 }), t
                             },
@@ -707,7 +707,7 @@
                 ! function(e) {
                     var n = "";
                     if (e.length) {
-                        (n = e.map(function(e, n) { return 0 == n ? "<li><a href=" + window.location.origin + "/" + e.path + ">" + e.title + '</a><span class="search-enter"> 🚀 </span></li>' : "<li><a href=" + window.location.origin + "/" + e.path + ">" + e.title + "</a></li>" })) && (document.querySelector(".search-result-box").style.display = "block");
+                        (n = e.map(function(e, n) { return 0 == n ? "<li><a href=" + window.location.origin + "/" + e.url + ">" + e.title + '</a><span class="search-enter"> 🚀 </span></li>' : "<li><a href=" + window.location.origin + "/" + e.url + ">" + e.title + "</a></li>" })) && (document.querySelector(".search-result-box").style.display = "block");
                         var t = document.getElementById("search-result");
                         t.innerHTML = n.join("")
                     }
