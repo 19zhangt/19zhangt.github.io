@@ -696,7 +696,7 @@
                 if (i) e(i);
                 else {
                     var n = new XMLHttpRequest;
-                    n.open("GET", "/search.json", !0), n.onload = function() {
+                    n.open("GET", "/content.json", !0), n.onload = function() {
                         if (this.status >= 200 && this.status < 300) {
                             var n = JSON.parse(this.response);
                             i = n instanceof Array ? n : n.posts, e(i)
