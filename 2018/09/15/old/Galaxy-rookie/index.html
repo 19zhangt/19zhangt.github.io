@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Tags | DataCloud</title>
+  <title>Galaxy 在服务器上的搭建和使用 | DataCloud</title>
   <meta name="keywords" content>
-  <meta name="description" content="Tags | DataCloud">
+  <meta name="description" content="Galaxy 在服务器上的搭建和使用 | DataCloud">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="你来到了没有知识的荒原 :(">
 <meta property="og:type" content="website">
@@ -338,24 +338,30 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="tags-" class="article article-type-tags" itemscope itemprop="blogPost">
+        <article id="post-old/Galaxy-rookie" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Tags</h1>
+        <h1 class="article-title">Galaxy 在服务器上的搭建和使用</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="安装教程">安装教程</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-09-15 20:08:06">2018-09-15 20:08</time>
+        创建时间:<time class="date" title="更新时间: 2018-10-01 17:50:11">2018-09-15 17:51</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:117</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -400,7 +406,13 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li>Galaxy搭建在./run.sh后，可能提示没有可用的Address，这时候需要手动修改config文件下的galaxy.yml文件中的http: 将127.0.0.1或0.0.0.0改成<br>真实的IP地址，然后重新运行./run.sh。</li>
+<li>如果出现locale.Error错误，需要设置 export LC_ALL=C 。可以将它写到~/.bashrc 文件中。</li>
+<li>关于字符超出ASCII码的范围，需要中./lib/galaxy/tools/toolbox/intergrated_panel.py 中开始添加:</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(‘utf<span class="number">-8</span>’)</span><br></pre></td></tr></table></figure>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -411,6 +423,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>Galaxy 在服务器上的搭建和使用</p>
+    <p><span>文章字数:</span><span class="post-count">117</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Zhang Ting">Zhang Ting</a></p>
+    <p><span>发布时间:</span>2018-09-15, 17:51:17</p>
+    <p><span>最后更新:</span>2018-10-01, 17:50:11</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/09/15/old/Galaxy-rookie/" title="Galaxy 在服务器上的搭建和使用">http://yoursite.com/2018/09/15/old/Galaxy-rookie/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
     <div id="comments"></div>

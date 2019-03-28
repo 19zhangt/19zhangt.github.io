@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Tags | DataCloud</title>
+  <title>DataCloud</title>
   <meta name="keywords" content>
-  <meta name="description" content="Tags | DataCloud">
+  <meta name="description" content="DataCloud">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="你来到了没有知识的荒原 :(">
 <meta property="og:type" content="website">
@@ -338,24 +338,28 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="tags-" class="article article-type-tags" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">Tags</h1>
+        <article id="post-old/KaKs" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+            <a href="javascript:" data-rel="个人">个人</a>
+            
+        </span>
+        
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-09-15 20:08:06">2018-09-15 20:08</time>
+        创建时间:<time class="date" title="更新时间: 2018-11-20 19:56:24">2019-03-28 08:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:124</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -400,7 +404,25 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<p><strong>Ka/Ks 计算需要用到：</strong></p>
+<ol>
+<li>ParaAT.pl(<a href="https://github.com/wonaya/ParaAT" target="_blank" rel="noopener">https://github.com/wonaya/ParaAT</a>) 转换数据格式</li>
+<li>cat 合并输出的每一对结果</li>
+<li>KaKs_Calculator(<a href="https://sourceforge.net/projects/kakscalculator2/files/latest/download)计算得出Ka，Ks，ω" target="_blank" rel="noopener">https://sourceforge.net/projects/kakscalculator2/files/latest/download)计算得出Ka，Ks，ω</a></li>
+<li>基因对信息，基因CDS和蛋白序列数据</li>
+</ol>
+<ul>
+<li style="list-style: none"><input type="checkbox"> <strong>文件类型</strong></li>
+<li>gene_pair.txt<ul>
+<li>格式为 gene1 gene2</li>
+</ul>
+</li>
+<li>gene_cds.fasta</li>
+<li>gene_pep.fasta<br>注意cds和pep以及gene_pair中的名字保持一致。</li>
+</ul>
+<p><strong>输出代码</strong>：<br><code>perl ParaAT.pl -h gene_pair.txt -n gene_cds.fasta -a gene_pep.fasta -p proc -o output -f axt</code><br><code>cat ./output/*.axt &gt; merge.axt</code><br><code>KaKs_Calculator -i ./merge.axt -o resut.txt</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -411,6 +433,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span>文章标题:</span></p>
+    <p><span>文章字数:</span><span class="post-count">124</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Zhang Ting">Zhang Ting</a></p>
+    <p><span>发布时间:</span>2019-03-28, 08:46:54</p>
+    <p><span>最后更新:</span>2018-11-20, 19:56:24</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/03/28/old/KaKs/" title>http://yoursite.com/2019/03/28/old/KaKs/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
     <div id="comments"></div>

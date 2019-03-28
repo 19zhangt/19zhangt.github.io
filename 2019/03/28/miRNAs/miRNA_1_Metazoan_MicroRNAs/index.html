@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Tags | DataCloud</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Tags | DataCloud">
+  <title>miRNAs(1) From Metazoan microRNAs (Cell;2018) to 动物microRNAs研究进展 | DataCloud</title>
+  <meta name="keywords" content=" miRNAs , Animal ">
+  <meta name="description" content="miRNAs(1) From Metazoan microRNAs (Cell;2018) to 动物microRNAs研究进展 | DataCloud">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="你来到了没有知识的荒原 :(">
 <meta property="og:type" content="website">
@@ -338,24 +338,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="tags-" class="article article-type-tags" itemscope itemprop="blogPost">
+        <article id="post-miRNAs/miRNA_1_Metazoan_MicroRNAs" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Tags</h1>
+        <h1 class="article-title">miRNAs(1) From Metazoan microRNAs (Cell;2018) to 动物microRNAs研究进展</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+            <a href="javascript:" data-rel="miRNAs">miRNAs</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">miRNAs</a>
+            
+            <a href="javascript:" class="color2">Animal</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-09-15 20:08:06">2018-09-15 20:08</time>
+        创建时间:<time class="date" title="更新时间: 2019-03-28 09:55:00">2019-03-28 00:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:491</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -385,7 +399,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Metazoan-microRNAs"><span class="toc-text">Metazoan microRNAs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#salmon-使用"><span class="toc-text">salmon 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关信息"><span class="toc-text">相关信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kallisto-使用"><span class="toc-text">kallisto 使用</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -400,7 +414,54 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Metazoan-microRNAs"><a href="#Metazoan-microRNAs" class="headerlink" title="Metazoan microRNAs"></a>Metazoan microRNAs</h2><h2 id="salmon-使用"><a href="#salmon-使用" class="headerlink" title="salmon 使用"></a><a href="https://combine-lab.github.io/salmon/getting_started/" target="_blank" rel="noopener">salmon</a> 使用</h2><ul>
+<li>下载地址: <a href="https://github.com/COMBINE-lab/salmon/releases" target="_blank" rel="noopener">Download</a></li>
+<li>说明文档: <a href="https://salmon.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Documentation</a></li>
+</ul>
+<p>设置环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=$PATH:~/softwares/salmon-0.13.1/bin</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>建立索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salmon index -t Araport11.cdna.fasta.gz -i athal_index</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转录本定量</p>
+</li>
+</ol>
+<ul>
+<li><p>双端数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">salmon quant -i athal_index -l A \</span><br><span class="line">        -1 XX_R1_trim.fq.gz \</span><br><span class="line">        -2 XX_R2_trim.fq.gz \</span><br><span class="line">        -p 8 -o XX_Trim_quant \</span><br><span class="line">        --gcBias</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单端数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">salmon quant -i athal_index -l A \</span><br><span class="line">       -r XX_trim.fq.gz \</span><br><span class="line">       -p 8 -o XX_Trim_quant \</span><br><span class="line">       --gcBias</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>相关参数：</p>
+<p>-l 指定测序数据类型。 A表示软件自动识别，具体参考<a href="https://salmon.readthedocs.io/en/latest/library_type.html#fraglibtype" target="_blank" rel="noopener">这里</a>。<br>–gcBias 分析并纠正输入数据中的片段水平的GC偏差。<br>–seqBias 分析并纠正输入数据中的序列特异性偏差（可通过FASTQC查看GC是否偏差）。</p>
+</blockquote>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>创新 :</p>
+<p><strong>A new dual-phase statistical inference procedure (双相统计推断程序) and sample-specific bias models that account for sequence-specific, fragment GC-content, and positional biases.</strong></p>
+<h3 id="相关信息"><a href="#相关信息" class="headerlink" title="相关信息"></a>相关信息</h3><ol>
+<li>中文名为鲑鱼</li>
+<li>文献信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Patro, R., Duggal, G., Love, M. I., Irizarry, R. A., &amp; Kingsford, C. (2017). Salmon provides fast and bias-aware quantification of transcript expression. Nature Methods.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="kallisto-使用"><a href="#kallisto-使用" class="headerlink" title="kallisto 使用"></a><a href="https://pachterlab.github.io/kallisto/starting.html" target="_blank" rel="noopener">kallisto</a> 使用</h2><ul>
+<li>下载地址: <a href="https://pachterlab.github.io/kallisto/download.html" target="_blank" rel="noopener">Download</a></li>
+<li>说明文档: <a href="https://pachterlab.github.io/kallisto/starting.html" target="_blank" rel="noopener">Getting Started</a></li>
+</ul>
+<ol>
+<li><p>建立索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kallisto index -i transcripts.idx transcripts.fasta.gz</span><br><span class="line">```  </span><br><span class="line">2. 转录本定量</span><br><span class="line">* 双端数据</span><br></pre></td></tr></table></figure>
+<p>kallisto quant -i transcripts.idx \<br>-o output -b 100 reads_1.fastq.gz reads_2.fastq.gz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 单端数据</span><br></pre></td></tr></table></figure>
+<p>kallisto quant -i transcripts.idx \<br>-o output -b 100 –single -l 180 -s 20 reads_1.fastq.gz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> **Note:** 对于单端数据必须提供fragment的长度（-l）和标准差（-s）</span><br><span class="line"></span><br><span class="line">3. 查看比对结果  </span><br><span class="line">通过下面命令能得到**pseudoalignments.bam**文件，可查看read在基因组上的比对情况。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>kallisto quant -i transcripts.kidx -b 30 \<br>-o kallisto_out –genomebam –gtf transcripts.gtf.gz \<br>–chromosomes chrom.txt reads_1.fastq.gz reads_2.fastq.gz<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 介绍</span><br><span class="line">该软件使用了*pseudoalignment*进行序列的定量。</span><br><span class="line">&gt;[*pseudoalignment*原理](http://tinyheero.github.io/2015/09/02/pseudoalignments-kallisto.html)</span><br><span class="line"></span><br><span class="line">### 相关信息</span><br><span class="line">1. 音同Callisto（卡利斯托：希腊神话中宙斯心爱的女神，被赫拉所憎恨并被她变为一只熊）</span><br><span class="line">2. 文献信息</span><br></pre></td></tr></table></figure></p>
+<p>Nicolas L Bray, Harold Pimentel, Páll Melsted and Lior Pachter, Near-optimal probabilistic RNA-seq quantification, Nature Biotechnology 34, 525–527 (2016), doi:10.1038/nbt.3519<br><code>`</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -411,6 +472,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>miRNAs(1) From Metazoan microRNAs (Cell;2018) to 动物microRNAs研究进展</p>
+    <p><span>文章字数:</span><span class="post-count">491</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Zhang Ting">Zhang Ting</a></p>
+    <p><span>发布时间:</span>2019-03-28, 00:00:00</p>
+    <p><span>最后更新:</span>2019-03-28, 09:55:00</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/03/28/miRNAs/miRNA_1_Metazoan_MicroRNAs/" title="miRNAs(1) From Metazoan microRNAs (Cell;2018) to 动物microRNAs研究进展">http://yoursite.com/2019/03/28/miRNAs/miRNA_1_Metazoan_MicroRNAs/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
     <div id="comments"></div>
