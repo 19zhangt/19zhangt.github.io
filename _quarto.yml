@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "gallery/*.qmd"
+  resources:
+    - images/
+    - data/
+    - scripts/
+    - snippets/
+
+website:
+  title: "图形小站"
+  site-url: https://19zhangt.github.io
+  repo-url: https://github.com/19zhangt/19zhangt.github.io
+  search: true
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: 首页
+      - text: 图形示例
+        menu:
+          - href: gallery/scatter.qmd
+            text: 散点图
+          - href: distribution.qmd
+            text: 分布图
+          - href: bar.qmd
+            text: 条形图
+          - href: line.qmd
+            text: 折线图
+          - href: heatmap.qmd
+            text: 热图
+      - href: about.qmd
+        text: 关于
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+
+execute:
+  eval: false

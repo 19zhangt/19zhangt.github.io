@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "line.html",
+    "href": "line.html",
+    "title": "折线图：月平均气温",
+    "section": "",
+    "text": "展示 airquality 历史真实观测数据中 5—9 月的月平均气温。历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  },
+  {
+    "objectID": "line.html#数据与变量",
+    "href": "line.html#数据与变量",
+    "title": "折线图：月平均气温",
+    "section": "数据与变量",
+    "text": "数据与变量\nCSV：airquality.csv。Month 为月份，Temp 为华氏温度；示例按月计算平均值，所用 5—9 月的温度记录无缺失。\n\n\n\nMonth\n平均 Temp（°F）\n\n\n\n\n5\n65.55\n\n\n6\n79.10\n\n\n7\n83.90\n\n\n8\n83.97\n\n\n9\n76.90\n\n\n\n\nggplot2tidyplots\n\n\n\n\n\n使用 ggplot2 绘制的月平均气温折线图\n\n\nlibrary(ggplot2)\nmonthly_temp &lt;- aggregate(Temp ~ Month, airquality, mean)\nggplot(monthly_temp, aes(Month, Temp)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  scale_x_continuous(breaks = 5:9) +\n  labs(x = \"月份\", y = \"平均气温 (°F)\") +\n  theme_minimal()\n\n\n\n\n\n使用 tidyplots 绘制的月平均气温折线图\n\n\nlibrary(tidyplots)\nmonthly_temp &lt;- aggregate(Temp ~ Month, airquality, mean)\nmonthly_temp |&gt;\n  tidyplot(x = Month, y = Temp) |&gt;\n  add_line() |&gt;\n  add_data_points()"
+  },
+  {
+    "objectID": "heatmap.html",
+    "href": "heatmap.html",
+    "title": "热图：汽车变量相关矩阵",
+    "section": "",
+    "text": "以颜色展示 mtcars 历史真实观测数据中 mpg、disp、hp、wt 四项变量的两两相关。相关系数由 base R cor() 计算，再转换成长表 column、row、correlation；历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  },
+  {
+    "objectID": "heatmap.html#数据与变量",
+    "href": "heatmap.html#数据与变量",
+    "title": "热图：汽车变量相关矩阵",
+    "section": "数据与变量",
+    "text": "数据与变量\nCSV：mtcars.csv。mpg 为燃油经济性，disp 为排量，hp 为马力，wt 为车重（千磅）。\n\n\n\nmpg\ndisp\nhp\nwt\n\n\n\n\n21.0\n160.0\n110\n2.620\n\n\n21.0\n160.0\n110\n2.875\n\n\n22.8\n108.0\n93\n2.320\n\n\n21.4\n258.0\n110\n3.215\n\n\n18.7\n360.0\n175\n3.440\n\n\n\n\nggplot2tidyplots\n\n\n\n\n\n使用 ggplot2 绘制的相关矩阵热图\n\n\nlibrary(ggplot2)\ncor_mat &lt;- cor(mtcars[, c(\"mpg\", \"disp\", \"hp\", \"wt\")])\ncor_long &lt;- as.data.frame(as.table(cor_mat))\nnames(cor_long) &lt;- c(\"column\", \"row\", \"correlation\")\nggplot(cor_long, aes(column, row, fill = correlation)) +\n  geom_tile() +\n  scale_fill_gradient2(limits = c(-1, 1)) +\n  labs(x = NULL, y = NULL, fill = \"相關\") +\n  theme_minimal()\n\n\n\n\n\n使用 tidyplots 绘制的相关矩阵热图\n\n\nlibrary(tidyplots)\ncor_mat &lt;- cor(mtcars[, c(\"mpg\", \"disp\", \"hp\", \"wt\")])\ncor_long &lt;- as.data.frame(as.table(cor_mat))\nnames(cor_long) &lt;- c(\"column\", \"row\", \"correlation\")\ncor_long |&gt;\n  tidyplot(x = column, y = row, color = correlation) |&gt;\n  add_heatmap()"
+  },
+  {
+    "objectID": "distribution.html",
+    "href": "distribution.html",
+    "title": "分布图：萼片长度",
+    "section": "",
+    "text": "比较 iris 历史真实观测数据中不同物种的萼片长度分布。历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  },
+  {
+    "objectID": "distribution.html#数据与变量",
+    "href": "distribution.html#数据与变量",
+    "title": "分布图：萼片长度",
+    "section": "数据与变量",
+    "text": "数据与变量\nCSV：iris.csv。Species 表示物种类别，Sepal.Length 表示萼片长度。\n\n\n\nSpecies\nSepal.Length\n\n\n\n\nsetosa\n5.1\n\n\nsetosa\n4.9\n\n\nsetosa\n4.7\n\n\nsetosa\n4.6\n\n\nsetosa\n5.0\n\n\n\n\nggplot2tidyplots\n\n\n\n\n\n使用 ggplot2 绘制的分布图\n\n\nlibrary(ggplot2)\nggplot(iris, aes(Species, Sepal.Length, fill = Species)) +\n  geom_violin(trim = FALSE, alpha = 0.55) +\n  geom_boxplot(width = 0.16, outlier.shape = NA) +\n  labs(x = \"物种\", y = \"萼片长度\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n使用 tidyplots 绘制的分布图\n\n\nlibrary(tidyplots)\niris |&gt;\n  tidyplot(x = Species, y = Sepal.Length, color = Species) |&gt;\n  add_violin() |&gt;\n  add_boxplot()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "关于本站",
+    "section": "",
+    "text": "本站以中文展示常见图形，并并排呈现 ggplot2 与 tidyplots 的示例结果。图像作为静态素材呈现；代码以普通 R 代码块显示，并从独立片段文件引入，页面构建不执行代码。"
+  },
+  {
+    "objectID": "about.html#这个网站",
+    "href": "about.html#这个网站",
+    "title": "关于本站",
+    "section": "",
+    "text": "本站以中文展示常见图形，并并排呈现 ggplot2 与 tidyplots 的示例结果。图像作为静态素材呈现；代码以普通 R 代码块显示，并从独立片段文件引入，页面构建不执行代码。"
+  },
+  {
+    "objectID": "about.html#数据说明",
+    "href": "about.html#数据说明",
+    "title": "关于本站",
+    "section": "数据说明",
+    "text": "数据说明\n示例数据来自 R 内置的 iris、mtcars、airquality 历史真实观测数据。散点图和分布图使用 iris；条形图与热图使用 mtcars；折线图使用 airquality。历史示例数据，仅用于绘图教学，不据此作当前总体推断。本站不进行统计检验。"
+  },
+  {
+    "objectID": "about.html#图形与代码",
+    "href": "about.html#图形与代码",
+    "title": "关于本站",
+    "section": "图形与代码",
+    "text": "图形与代码\n每个示例页分别提供 ggplot2、tidyplots 两个标签页，配以静态图像、小型数据表和变量说明。原始 CSV 与图像由项目资源目录提供；完整 R 代码片段由 snippets/ 目录提供。"
+  },
+  {
+    "objectID": "bar.html",
+    "href": "bar.html",
+    "title": "条形图：汽缸频数",
+    "section": "",
+    "text": "按汽缸数统计 mtcars 历史真实观测数据中的记录频数。频数由示例数据脚本使用 base R aggregate() 汇总；历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  },
+  {
+    "objectID": "bar.html#数据与变量",
+    "href": "bar.html#数据与变量",
+    "title": "条形图：汽缸频数",
+    "section": "数据与变量",
+    "text": "数据与变量\nCSV：mtcars.csv。cyl 是汽缸数，count 是按汽缸数分组的记录频数。\n\n\n\ncyl\ncount\n\n\n\n\n4\n11\n\n\n6\n7\n\n\n8\n14\n\n\n\n\nggplot2tidyplots\n\n\n\n\n\n使用 ggplot2 绘制的汽缸频数条形图\n\n\nlibrary(ggplot2)\ncyl_count &lt;- aggregate(rep(1, nrow(mtcars)), list(cyl = mtcars$cyl), sum)\nnames(cyl_count)[2] &lt;- \"count\"\nggplot(cyl_count, aes(factor(cyl), count)) +\n  geom_col() +\n  labs(x = \"汽缸数\", y = \"记录数\") +\n  theme_minimal()\n\n\n\n\n\n使用 tidyplots 绘制的汽缸频数条形图\n\n\nlibrary(tidyplots)\ncyl_count &lt;- aggregate(rep(1, nrow(mtcars)), list(cyl = mtcars$cyl), sum)\nnames(cyl_count)[2] &lt;- \"count\"\ncyl_count |&gt;\n  tidyplot(x = cyl, y = count) |&gt;\n  add_mean_bar()"
+  },
+  {
+    "objectID": "gallery/scatter.html",
+    "href": "gallery/scatter.html",
+    "title": "散点图：鸢尾花萼片",
+    "section": "",
+    "text": "通过萼片长度与宽度观察 iris 历史真实观测数据中的记录，并用物种区分颜色。历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  },
+  {
+    "objectID": "gallery/scatter.html#数据与变量",
+    "href": "gallery/scatter.html#数据与变量",
+    "title": "散点图：鸢尾花萼片",
+    "section": "数据与变量",
+    "text": "数据与变量\nCSV：iris.csv。Sepal.Length、Sepal.Width 分别为萼片长度、宽度，Species 为鸢尾花物种类别。\n\n\n\nSepal.Length\nSepal.Width\nSpecies\n\n\n\n\n5.1\n3.5\nsetosa\n\n\n4.9\n3.0\nsetosa\n\n\n4.7\n3.2\nsetosa\n\n\n4.6\n3.1\nsetosa\n\n\n5.0\n3.6\nsetosa\n\n\n\n\nggplot2tidyplots\n\n\n\n\n\n使用 ggplot2 绘制的散点图\n\n\nlibrary(ggplot2)\nggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +\n  geom_point(alpha = 0.8, size = 2) +\n  labs(x = \"萼片长度\", y = \"萼片宽度\", color = \"物种\") +\n  theme_minimal()\n\n\n\n\n\n使用 tidyplots 绘制的散点图\n\n\nlibrary(tidyplots)\niris |&gt;\n  tidyplot(x = Sepal.Length, y = Sepal.Width, color = Species) |&gt;\n  add_data_points()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "用图形看数据",
+    "section": "",
+    "text": "用图形看数据\n一组轻巧、可复现的 R 可视化示例。浏览图形类型，比较 ggplot2 与 tidyplots 的表达方式；图像与代码均为示例素材，页面不会执行代码。\n\n\n\n散点图\n观察鸢尾花萼片长宽与品种。\n\n\n\nggplot2 散点图预览\n\n\n\n\n分布图\n比较不同品种的萼片长度。\n\n\n\nggplot2 分布图预览\n\n\n\n\n条形图\n查看汽车数据中的汽缸数量频数。\n\n\n\nggplot2 条形图预览\n\n\n\n\n折线图\n查看 5—9 月平均气温变化。\n\n\n\nggplot2 折线图预览\n\n\n\n\n热图\n探索汽车变量间的相关性。\n\n\n\nggplot2 热图预览\n\n\n\n\n\n这里使用的 iris、mtcars 与 airquality 是历史真实观测数据。历史示例数据，仅用于绘图教学，不据此作当前总体推断。"
+  }
+]

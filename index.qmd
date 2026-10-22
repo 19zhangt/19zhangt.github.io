@@ -1,0 +1,56 @@
+---
+title: "用图形看数据"
+description: "轻量的 R 可视化示例：同一图形，两种工作流。"
+---
+
+::: {.hero}
+# 用图形看数据
+
+一组轻巧、可复现的 R 可视化示例。浏览图形类型，比较 **ggplot2** 与 **tidyplots** 的表达方式；图像与代码均为示例素材，页面不会执行代码。
+:::
+
+::: {.card-grid}
+::: {.plot-card}
+### [散点图](gallery/scatter.qmd)
+
+观察鸢尾花萼片长宽与品种。
+
+![ggplot2 散点图预览](images/scatter-ggplot2.png){.plot-image}
+:::
+
+::: {.plot-card}
+### [分布图](distribution.qmd)
+
+比较不同品种的萼片长度。
+
+![ggplot2 分布图预览](images/distribution-ggplot2.png){.plot-image}
+:::
+
+::: {.plot-card}
+### [条形图](bar.qmd)
+
+查看汽车数据中的汽缸数量频数。
+
+![ggplot2 条形图预览](images/bar-ggplot2.png){.plot-image}
+:::
+
+::: {.plot-card}
+### [折线图](line.qmd)
+
+查看 5—9 月平均气温变化。
+
+![ggplot2 折线图预览](images/line-ggplot2.png){.plot-image}
+:::
+
+::: {.plot-card}
+### [热图](heatmap.qmd)
+
+探索汽车变量间的相关性。
+
+![ggplot2 热图预览](images/heatmap-ggplot2.png){.plot-image}
+:::
+:::
+
+::: {.data-note}
+这里使用的 iris、mtcars 与 airquality 是历史真实观测数据。历史示例数据，仅用于绘图教学，不据此作当前总体推断。
+:::
